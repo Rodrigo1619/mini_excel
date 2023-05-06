@@ -3,9 +3,13 @@
 
 using namespace std;
 
-//prototipo de las funciones
+//prototipo de las funciones de menu principal
 void nuevo();
 void abrir();
+
+//prototipos de funciones que se hara con el grid
+void ingresarContenido(), saltarCelda(), copiar(), cortar() ,pegar(), moverIzquierda(), moverDerecha(), 
+moverArriba(), moverAbajo(), guardar();
 
 int main(){
 
@@ -25,7 +29,7 @@ int main(){
         switch(opcion)
         {
             case 1: nuevo();  break;
-            case 2: cout<<"abriendo anterior\n"; break;
+            case 2: abrir(); break;
             case 3: menu = false; break;
             default: cout<<"\tIngresa una opcion valida!!!!!!!\n\n"; break;
         }
@@ -34,7 +38,9 @@ int main(){
 
 //definiendo las funciones
 
-
+void abrir(){
+    cout << "abriendo anterior hoja\n";
+}
 
 void nuevo(){
     int opcionNuevo = 0;
@@ -76,4 +82,7 @@ void nuevo(){
         }
     } while (continuarNuevo == true);
 }
+
+//Definiendo funciones a usar del grid
+
 
