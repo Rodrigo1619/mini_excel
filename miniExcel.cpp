@@ -90,48 +90,43 @@ void nuevo(){
 
 //Definiendo funciones a usar del grid
 void mostrarGrid(){
-    
     const int size = 5; // Tamaño de la cuadrícula
     
-    // Bucle externo para las filas
+    // Imprimir encabezado de letras
+    cout << "  ";
     for (int i = 0; i < size; i++) {
-        
-        // Bucle interno para las columnas
-        for (int j = 0; j < size; j++) {
-            cout << "+---"; // Imprimir línea horizontal
-            
-            // Imprimir "+" adicional después de la última columna
-            if (j == size - 1) {
-                cout << "+";
-            }
-        }
-        
-        cout << endl; // Saltar a la siguiente línea
-        
-        // Bucle interno para las columnas
-        for (int j = 0; j < size; j++) {
-            cout << "|   "; // Imprimir celda vacía
-            
-            // Imprimir "|" adicional después de la última columna
-            if (j == size - 1) {
-                cout << "|";
-            }
-        }
-        
-        cout << endl; // Saltar a la siguiente línea
+        char rowChar = 'A' + i;
+        cout << "  " << rowChar << " ";
     }
+    cout << endl;
     
-    // Imprimir la línea horizontal inferior
+    // Imprimir línea horizontal superior
+    cout << "  +";
     for (int j = 0; j < size; j++) {
-        cout << "+---"; // Imprimir línea horizontal
-        
-        // Imprimir "+" adicional después de la última columna
-        if (j == size - 1) {
-            cout << "+";
-        }
+        cout << "---+";
     }
+    cout << endl;
     
-    cout << endl; // Saltar a la siguiente línea
-    
+    // Bucle externo para las filas
+    for (int i = 1; i <= size; i++) {
+        
+        // Imprimir número de la columna
+        cout << i << " |";
+        
+        // Imprimir celdas vacías
+        for (int j = 0; j < size; j++) {
+            cout << "   |";
+        }
+        cout << endl;
+        
+        // Imprimir línea horizontal intermedia
+        cout << "  +";
+        for (int j = 0; j < size; j++) {
+            cout << "---+";
+        }
+        cout << endl;
+    }
 }
+
+
 
